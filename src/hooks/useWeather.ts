@@ -13,7 +13,7 @@ export function useWeatherQuery(coordinates: Coordinates | null) {
   return useQuery({
     queryKey: WEATHER_KEYS.weather(coordinates ?? { lat: 0, lon: 0 }),
     queryFn: () =>
-      coordinates ? WeatherAPI.getCurrentWeather(coordinates) : null,
+      (coordinates ? WeatherAPI.getCurrentWeather(coordinates) : null),
     enabled: !!coordinates,
   });
 }

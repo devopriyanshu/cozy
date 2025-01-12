@@ -8,7 +8,7 @@ class weatherApi {
     params: Record<string, string | number>
   ) {
     const searchParams = new URLSearchParams({
-      appid: API_CONFIG.API_KEY,
+      appid: "69aa6db6f56c8ea0875de0761c6e45f9",
       ...params,
     });
     return `${endpoints}?${searchParams.toString()}`;
