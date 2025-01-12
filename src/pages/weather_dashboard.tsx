@@ -4,6 +4,8 @@ import { HourlyForecast } from "@/components/HourlyForecast";
 import WeatherSkeleton from "@/components/Skeleton";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { WeatherDetails } from "@/components/WeatherDetails";
+import { WeatherForecast } from "@/components/WeatherForecast";
 import { useGetLocation } from "@/hooks/useGetLocation";
 import {
   useForecastQuery,
@@ -109,6 +111,8 @@ const WeatherDashboard = () => {
           locationName={locationName}
         />
         <HourlyForecast data={forecastQuery.data || defaultForecastData} />
+        <WeatherDetails data={weatherQuery.data || defaultWeatherData} />
+        <WeatherForecast data={forecastQuery.data || defaultForecastData} />
       </div>
     </div>
   );
